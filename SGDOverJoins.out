@@ -1,0 +1,21 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.2}{Preliminaries and Background}{}% 2
+\BOOKMARK [1][-]{section.3}{Simple Approaches}{}% 3
+\BOOKMARK [2][-]{subsection.3.1}{SGD After a Join: Materialize}{section.3}% 4
+\BOOKMARK [2][-]{subsection.3.2}{SGD Over a Join: Index-Stream}{section.3}% 5
+\BOOKMARK [1][-]{section.4}{Optimizing SGD Over Joins}{}% 6
+\BOOKMARK [2][-]{subsection.4.1}{Order-Preserving Index-Stream under Low Memory}{section.4}% 7
+\BOOKMARK [2][-]{subsection.4.2}{Order-Relaxed Approaches}{section.4}% 8
+\BOOKMARK [3][-]{subsubsection.4.2.1}{Hash-Partitioned Index-Stream}{subsection.4.2}% 9
+\BOOKMARK [3][-]{subsubsection.4.2.2}{Simulation Study}{subsection.4.2}% 10
+\BOOKMARK [3][-]{subsubsection.4.2.3}{Shuffling Only Once}{subsection.4.2}% 11
+\BOOKMARK [2][-]{subsection.4.3}{Extensions}{section.4}% 12
+\BOOKMARK [3][-]{subsubsection.4.3.1}{Multi-table Joins}{subsection.4.3}% 13
+\BOOKMARK [3][-]{subsubsection.4.3.2}{Shared-nothing Parallelism}{subsection.4.3}% 14
+\BOOKMARK [2][-]{subsection.4.4}{Mini-Batch Gradient Descent}{section.4}% 15
+\BOOKMARK [1][-]{section.5}{Experiments}{}% 16
+\BOOKMARK [2][-]{subsection.5.1}{High-level Performance and Quality}{section.5}% 17
+\BOOKMARK [2][-]{subsection.5.2}{Performance Drill-Down}{section.5}% 18
+\BOOKMARK [2][-]{subsection.5.3}{Evaluation of Extensions}{section.5}% 19
+\BOOKMARK [1][-]{section.6}{Related Work}{}% 20
+\BOOKMARK [1][-]{section.7}{Conclusion and Future Work}{}% 21

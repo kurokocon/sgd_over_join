@@ -1,0 +1,16 @@
+
+
+Steps to setup on a linux vm:
+1. Install readline-dev for pg configure. Install python-psycopg2
+2. Install pg database with the modified code(for explain command)
+3. reload work_mem
+4. Copy the orion front code and experiment script. Install the new functions
+* 5. Modify the script for the experiment specific purpose. 
+6. Run the clear buffer script and Start running experiment script
+
+Some notes:
+
+1. The original postgresql source code is modified so that the estimated number of
+chunks is printed out even if "analyze" command is not provided
+
+2. The orion_front.py and custom function code are modified to add support for sgd.

@@ -1,0 +1,62 @@
+The experiment with synthetic data aims to explore the accuracy tradeoff
+as the number of partition chunk increases in HPIS algorithm. It can be
+divided into two parts:
+
+1. With multi-table join, compare different chunk division methods given randomized data
+
+Section 4.3.1 gives a discussion about memory chunk partition with multi-table join.
+The three partition methods compared are optimal solution, greedy approach, and proportional approach.
+
+Related code:
+
+gen_data_multi.cpp: Generate data with multiple R tables
+test_partition.cpp: Calculate total number of partitions
+runTrain.sh: Script that runs the experiment 
+partition.cpp: Implement the three partition methods
+SGDTrain.cpp:
+  g++ SGDTrain.cpp -std=c++11 (or -std=c++0x on lab machine) to compile.
+  ./<binary> <-h> to see the following input instructions:
+    ./<binary> <ns> <S table filename>
+      -n <number of R tables>
+      -i <input directory_root> <R table names>
+      -f <foreign key index>
+      -r <number of entries in R tables>
+      -o <output directory_root>
+      -e <number of epochs>
+      -p <number of partitions> (only useful for HPIS)
+      -a <stepsize>
+      -d <stepsize decay>
+      -m <mode>:  1 for shuffle every time
+                  2 for shuffle once
+                  3 HPIS shuffle every time
+                  4 HPIS shuffle once
+      -v: add "-v" to turn verbose on, will show some output for debugging
+drawPlot.py: Put it in the output directory of runTrain.sh. Running it will
+			produce the plots given experiment results
+A set of R file and runR.sh script are used to test the optimality of the 
+final loss value.
+
+2. Test the accuracy tradeoff when data is skewed.
+
+Data can be skewed in two ways:
+
+half-half: first half being positive examples, while second half being negative
+
+round-robin: divide data into chunks, and adjacent chunks will have opposite target.
+			So the order will be like: positive-negative-positive...
+			
+For each pattern we test with single-level shuffling vs. two-level shuffling.
+
+Related code:
+
+SGDTrain_old_single.cpp & SGDTrain_old_double.cpp: Do training with one-level and two-level
+	shuffling, respectively.
+	
+double_shuffle.sh: Run experiment with different number of chunks. Can be used for both one-level
+	and two-level shuffling
+	
+gen_data_skewed.cpp: Slightly modified code to produce skewed data
+
+grid_search.sh: With given data, use grid search to tune for the best alpha and decay parameters.
+
+double_shuffle_plot.py: Given gathered output tables, produce the plots
