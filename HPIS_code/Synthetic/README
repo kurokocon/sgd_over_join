@@ -49,7 +49,7 @@ For each pattern we test with single-level shuffling vs. two-level shuffling.
 
 Related code:
 
-SGDTrain_old_single.cpp & SGDTrain_old_double.cpp: Do training with one-level and two-level
+SGDTrain_old_single.cpp and SGDTrain_old_double.cpp: Do training with one-level and two-level
 	shuffling, respectively.
 	
 double_shuffle.sh: Run experiment with different number of chunks. Can be used for both one-level
